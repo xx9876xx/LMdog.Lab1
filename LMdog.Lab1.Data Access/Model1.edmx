@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="LabModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="RecId" />
+          </Key>
+          <Property Name="RecId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="PersonId" Type="varchar" MaxLength="30" />
+          <Property Name="Idno" Type="varchar" MaxLength="10" />
+          <Property Name="EmpName" Type="nvarchar" MaxLength="12" />
+          <Property Name="EmpId" Type="varchar" MaxLength="10" />
+          <Property Name="BirthDate" Type="datetime" />
+          <Property Name="Gender" Type="varchar" MaxLength="1" />
+          <Property Name="DeptId" Type="varchar" MaxLength="20" />
+          <Property Name="DeptName" Type="nvarchar" MaxLength="40" />
+          <Property Name="AcrDeptId" Type="varchar" MaxLength="20" />
+          <Property Name="AcrDeptName" Type="nvarchar" MaxLength="40" />
+          <Property Name="TitleId" Type="varchar" MaxLength="4" />
+          <Property Name="TitleName" Type="nvarchar" MaxLength="20" />
+          <Property Name="FirstDay" Type="datetime" />
+          <Property Name="StaffKind" Type="varchar" MaxLength="1" />
+          <Property Name="StaffKindDesc" Type="nvarchar" MaxLength="20" />
+          <Property Name="JobStatus" Type="varchar" MaxLength="1" />
+          <Property Name="LastDay" Type="datetime" />
+          <Property Name="CreateTime" Type="datetime" />
+          <Property Name="ModifyTime" Type="datetime" />
+          <Property Name="UpdateTime" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="LabModelStoreContainer">
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LabModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="RecId" />
+          </Key>
+          <Property Name="RecId" Type="Guid" Nullable="false" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="PersonId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Idno" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EmpName" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="EmpId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DeptId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DeptName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="AcrDeptId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="AcrDeptName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="TitleId" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="TitleName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FirstDay" Type="DateTime" Precision="3" />
+          <Property Name="StaffKind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="StaffKindDesc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="JobStatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="LastDay" Type="DateTime" Precision="3" />
+          <Property Name="CreateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifyTime" Type="DateTime" Precision="3" />
+          <Property Name="UpdateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="LabEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LabModelStoreContainer" CdmEntityContainer="LabEntities">
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="LabModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="RecId" ColumnName="RecId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+                <ScalarProperty Name="Idno" ColumnName="Idno" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DeptId" ColumnName="DeptId" />
+                <ScalarProperty Name="DeptName" ColumnName="DeptName" />
+                <ScalarProperty Name="AcrDeptId" ColumnName="AcrDeptId" />
+                <ScalarProperty Name="AcrDeptName" ColumnName="AcrDeptName" />
+                <ScalarProperty Name="TitleId" ColumnName="TitleId" />
+                <ScalarProperty Name="TitleName" ColumnName="TitleName" />
+                <ScalarProperty Name="FirstDay" ColumnName="FirstDay" />
+                <ScalarProperty Name="StaffKind" ColumnName="StaffKind" />
+                <ScalarProperty Name="StaffKindDesc" ColumnName="StaffKindDesc" />
+                <ScalarProperty Name="JobStatus" ColumnName="JobStatus" />
+                <ScalarProperty Name="LastDay" ColumnName="LastDay" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+                <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
