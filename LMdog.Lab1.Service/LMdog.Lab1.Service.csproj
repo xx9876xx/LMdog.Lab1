@@ -40,10 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthService.cs" />
+    <Compile Include="EmployeeService.cs" />
+    <Compile Include="JobService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LMdog.Lab1.Domain\LMdog.Lab1.Domain.csproj">
+      <Project>{0e1fc006-8179-4831-845c-28bec1fb3c55}</Project>
+      <Name>LMdog.Lab1.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
