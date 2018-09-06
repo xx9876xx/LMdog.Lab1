@@ -112,5 +112,29 @@ namespace LMdog.Lab1.Domain
         /// 資料更新時間
         /// </summary>
         public DateTime? UpdateTime { get; set; }
+
+        public Employee(LMdog.Lab1.Data_Access.Employee employee)
+        {
+            this.RecId = employee.RecId;
+            this.RowVersion = employee.RowVersion;
+            this.PersonId = employee.PersonId;
+            this.Idno = employee.Idno;
+            this.EmpName = employee.EmpName;
+            this.EmpId = employee.EmpId;
+            this.BirthDate = employee.BirthDate;
+            this.Gender = employee.Gender;
+            this.DeptId = employee.DeptId;
+            this.DeptName = employee.DeptName;
+            this.TitleId = employee.TitleId;
+            this.TitleName = employee.TitleName;
+            this.FirstDay = employee.FirstDay;
+            this.StaffKind = employee.StaffKind;
+            this.StaffKindDesc = employee.StaffKindDesc;
+            this.JobStatus = employee.JobStatus;
+            this.LastDay = employee.LastDay;
+            this.CreateTime = employee.CreateTime;
+            this.ModifyTime = employee.ModifyTime;
+            this.UpdateTime = employee.UpdateTime;
+        }
     }
 }

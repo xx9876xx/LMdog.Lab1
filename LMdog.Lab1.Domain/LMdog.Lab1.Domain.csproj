@@ -43,5 +43,11 @@
     <Compile Include="Employee.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LMdog.Lab1.Data Access\LMdog.Lab1.Data Access.csproj">
+      <Project>{4ba29f44-c8dc-4b31-8750-2cc6e74a19ec}</Project>
+      <Name>LMdog.Lab1.Data Access</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

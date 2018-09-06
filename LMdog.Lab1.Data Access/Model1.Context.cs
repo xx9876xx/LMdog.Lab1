@@ -25,6 +25,6 @@ namespace LMdog.Lab1.Data_Access
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<Employee> Employees { get; set; }
     }
 }
